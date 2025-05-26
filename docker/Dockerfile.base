@@ -151,6 +151,9 @@ RUN python3 -m pip install -U \
     ninja \
     wheel
 
+# Ensure compatible tooling for pyproject builds
+RUN python3 -m pip install --upgrade pip setuptools wheel "packaging>=23.1,<24"
+
 # Python3 PIP packages
 RUN python3 -m pip install -U \
     argcomplete \
